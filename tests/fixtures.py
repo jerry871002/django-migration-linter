@@ -14,6 +14,12 @@ ADD_NOT_NULL_COLUMN_FOLLOWED_BY_DB_DEFAULT = (
 ADD_NOT_NULL_COLUMN_WITH_NULL_DB_DEFAULT = (
     "app_add_not_null_column_with_null_db_default"
 )
+ADD_NOT_NULL_COLUMN_RUNSQL_DEFAULT_BEFORE_NOT_NULL = (
+    "app_add_not_null_column_runsql_default_before_not_null"
+)
+ADD_NOT_NULL_COLUMN_RUNSQL_NOT_NULL_BEFORE_DEFAULT = (
+    "app_add_not_null_column_runsql_not_null_before_default"
+)
 ALTER_COLUMN = "app_alter_column"
 ALTER_COLUMN_DROP_NOT_NULL = "app_alter_column_drop_not_null"
 DROP_UNIQUE_TOGETHER = "app_unique_together"

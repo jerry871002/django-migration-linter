@@ -340,3 +340,19 @@ class RunSQLMigrationTestCase(unittest.TestCase):
 
         error, ignored, warning = self.linter.lint_runsql(runsql)
         self.assertEqual("DROP_COLUMN", error[0].code)
+
+    def test_sql_default_before_not_null(self):
+        runsql = migrations.RunSQL(
+            "ALTER TABLE t ADD COLUMN c integer DEFAULT 1 NOT NULL;"
+        )
+
+        error, ignored, warning = self.linter.lint_runsql(runsql)
+        self.assertEqual(0, len(error))
+
+    def test_sql_not_null_before_default(self):
+        runsql = migrations.RunSQL(
+            "ALTER TABLE t ADD COLUMN c integer NOT NULL DEFAULT 1;"
+        )
+
+        error, ignored, warning = self.linter.lint_runsql(runsql)
+        self.assertEqual(0, len(error))
