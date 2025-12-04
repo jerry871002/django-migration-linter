@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "tests.test_project.app_add_manytomany_field",
     "tests.test_project.app_add_not_null_column",
     "tests.test_project.app_add_not_null_column_followed_by_default",
+    "tests.test_project.app_add_not_null_column_runsql_default_before_not_null",
+    "tests.test_project.app_add_not_null_column_runsql_not_null_before_default",
     "tests.test_project.app_alter_column",
     "tests.test_project.app_alter_column_drop_not_null",
     "tests.test_project.app_correct",

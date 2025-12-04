@@ -101,6 +101,14 @@ class BaseBackwardCompatibilityDetection:
         app = fixtures.ADD_NOT_NULL_COLUMN_FOLLOWED_BY_DEFAULT
         self._test_linter_finds_no_errors(app)
 
+    def test_runsql_default_before_not_null(self):
+        app = fixtures.ADD_NOT_NULL_COLUMN_RUNSQL_DEFAULT_BEFORE_NOT_NULL
+        self._test_linter_finds_no_errors(app)
+
+    def test_runsql_not_null_before_default(self):
+        app = fixtures.ADD_NOT_NULL_COLUMN_RUNSQL_NOT_NULL_BEFORE_DEFAULT
+        self._test_linter_finds_no_errors(app)
+
     @skipIf(django.VERSION[0] < 5, "db_default was implemented in Django 5.0")
     def test_accept_not_null_column_followed_by_adding_db_default(self):
         app = fixtures.ADD_NOT_NULL_COLUMN_FOLLOWED_BY_DB_DEFAULT
